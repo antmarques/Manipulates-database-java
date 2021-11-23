@@ -1,7 +1,7 @@
 package atividadeverificadora;
 import java.sql.ResultSet; 
 
-/*To perform each function in the table, put "*/" in front and at the end "/*" of the function you will not use. 
+/*To perform each function in the table, put "//" in front and at the end "//" of the function you will not use. 
 */
 
 public class Principal {
