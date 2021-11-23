@@ -9,42 +9,42 @@ public class ConexaoBd {
 	private String url;
 	private String usuario;
 	private String senha;
-    private Connection con;
+    	private Connection con;
     
-    ConexaoBd(){
+    	ConexaoBd(){
     	url = "jdbc:postgresql://localhost:5432/BDParaEstudos";
     	usuario = "postgres";
     	senha = "123456";
     	
     	try {
-			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection(url,usuario,senha);
-			System.out.println("Conex„o Realizada");
+		Class.forName("org.postgresql.Driver");
+		con = DriverManager.getConnection(url,usuario,senha);
+		System.out.println("Conex√£o Realizada");
 			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
     }
-    public int insereSQL(String sql) {
+    	public int insereSQL(String sql) {
     	try {
-			Statement stm = con.createStatement();
+		Statement stm = con.createStatement();
     		int res = stm.executeUpdate(sql);
     		con.close();
     		return res;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
+	}catch (Exception e) {
+		e.printStackTrace();
+		return 0;
 		}
     }
-    public ResultSet executaBusca(String sql){
+    	public ResultSet executaBusca(String sql){
     	try {
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery(sql);
-			con.close();
-			return rs;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery(sql);
+		con.close();
+		return rs;
+	}catch (Exception e) {
+		e.printStackTrace();
+		return null;
+	}
     }
 }
